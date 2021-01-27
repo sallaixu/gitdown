@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Title</title>
+</head>
+<body>
+<table class="table">
+    <tr>
+        <th>文件名</th>
+        <th>大小</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="file:${fileList}">
+        <td th:text="${file.name}"></td>
+        <td th:text="${file.size}"></td>
+        <td ><a th:href="${'/file/delByName?name='+ file.name}">删除</a></td>
+    </tr>
+</table>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+<link type="text/css" rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}" ></link>
+</body>
+</html>
